@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>慕课网2015课程学习情况</title>
+    <!-- 基本资源库 -->
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+
+    <script type="text/javascript" src="../js/H5ComponentPolyline.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentPolyline.css">
+    <link rel="stylesheet" href="../css/H5ComponentBase.css">
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="iphone">
+
+    </div>
+
+    <script type="text/javascript">
+        var cfg = {
+            type: 'polyline',
+            width: 530,
+            height: 600,
+            data: [
+                ['Javascript', 0.4, 'green'],
+                ['HTML/CSS', 0.2],
+                ['CSS3', 0.1],
+                ['HTML5', 0.2],
+                ['jQuery', 0.35],
+                ['Bootstrap', 0.05],
+                ['AngularJs', 0.09]
+            ],
+            css: {
+                top: 100,
+                opacity: 0
+            },
+            animateIn:{
+                opacity:1,
+                top:200
+            },
+            animateOut:{
+                opacity:0,
+                top:100
+            },
+            center: true
+        };
+        var h5 = new H5ComponentPolyline('myPolylineComponent', cfg);
+        $('.iphone').append(h5);
+
+        var leave = true;
+        $('body').click(function () {
+            leave = !leave;
+            $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad');
+        })
+
+    </script>
+
+</body>
+</html>
